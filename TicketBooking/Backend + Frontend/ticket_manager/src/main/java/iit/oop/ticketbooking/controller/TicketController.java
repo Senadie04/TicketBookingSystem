@@ -18,7 +18,7 @@ import java.math.BigDecimal;
 import java.util.stream.Collectors;
 import java.io.FileReader;
 
-@CrossOrigin(origins="http://localhost:4222")
+@CrossOrigin(origins="http://localhost:4200")
 @RestController
 @RequestMapping("/api/tickets")
 public class TicketController {
