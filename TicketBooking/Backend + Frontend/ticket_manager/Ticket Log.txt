@@ -1,0 +1,6 @@
+12-12-2024 04:59:12 - The application was successfully initialized with a maximum capacity of 25 tickets.
+
+12-12-2024 04:59:18 - System stopped.
+
+12-12-2024 04:59:24 - System started.
+

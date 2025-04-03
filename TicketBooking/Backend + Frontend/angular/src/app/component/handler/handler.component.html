@@ -1,0 +1,138 @@
+<div class="container" [ngClass]="{ active: showVendorForm || showCustomerForm }"> 
+    <div id="buttons" [ngClass]="{ 'move-left': showVendorForm || showCustomerForm }">
+        <button (click)="startProgram()">Start</button>
+        <button (click)="toggleVendorForm()">Add Tickets</button> 
+        <button (click)="toggleCustomerForm()">Buy Tickets</button>
+        <button (click)="stopProgram()">Stop</button>
+    </div>
+
+
+    <div class="form" [ngClass]="{ show: showVendorForm }">
+        <div class="formHeader">
+            <p>Add Tickets</p> 
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="closeButton" (click)="toggleVendorForm()">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 9-6 6m0-6 6 6m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+            </svg>  
+        </div> 
+        <form (ngSubmit)="addVendor()" #vendorForm="ngForm">
+            <label for="vendorName">Vendor Name:</label><br>
+            <input 
+            type="text" 
+            name="vendorName" 
+            id="vendorName"
+            [(ngModel)]="vendorName"
+            required
+            #vendorNameInput = "ngModel"
+            [ngClass]="{'error': vendorNameInput.invalid && vendorNameInput.touched}"
+            placeholder="Enter vendor name..."
+            ><br>
+
+            
+            <label for="">Event name:</label>
+            <br>
+            
+            <input 
+            type="text" 
+            id="eventName" 
+            [(ngModel)]="eventName" 
+            name="eventName" 
+            required  
+            #eventNameInput="ngModel" 
+            [ngClass]="{'error': eventNameInput.invalid && eventNameInput.touched}"
+            placeholder="Enter event name..."
+            /><br>
+
+            <label for="ticketPrice">Ticket Price:</label><br>
+            <input 
+            type="number"
+            id="ticketPrice"
+            [(ngModel)]="ticketPrice"
+            name="ticketPrice"
+            required
+            #ticketPriceInput = "ngModel"
+            [ngClass]="{'error': ticketPriceInput.invalid && ticketPriceInput.touched}"
+            ><br>
+
+            <label for="totalTickets">Total tickets:</label><br>
+            <input type="number" 
+            id="totalTickets"
+            [(ngModel)]="totalTickets"
+            name="totalTickets"
+            required
+            min="1"
+            #totalTicketsInput = "ngModel"
+            [ngClass]="{'error': totalTicketsInput.invalid && totalTicketsInput.touched}"
+            ><br>
+
+            <label for="">Ticket Release Rate</label><br>
+            <input 
+            type="number" 
+            id="ticketReleaseRate"
+            [(ngModel)]="ticketReleaseRate"
+            name="ticketReleaseRate"
+            required
+            min="1"
+            #ticketReleaseRateInput = "ngModel"
+            [ngClass]="{'error': ticketReleaseRateInput.invalid && ticketReleaseRateInput.touched}"
+            ><br>
+
+            <div class="formButtons">
+                 <button type="reset" class="resetButton">Reset</button>
+                <button type="submit" class="submitButton" [disabled]="vendorForm.invalid">Submit</button>
+            </div>
+        </form>  
+    </div>
+
+    <div class="form" [ngClass]="{ show: showCustomerForm }">
+        <div class="formHeader">
+            <p>Buy Tickets</p> 
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="closeButton" (click)="toggleCustomerForm()">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 9-6 6m0-6 6 6m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+            </svg>  
+        </div> 
+        <form (ngSubmit)="addCustomer()" #customerForm=ngForm>
+            <label for="customerName">Customer Name:</label><br>
+            <input 
+            type="text" 
+            id="customerName"
+            [(ngModel)]="customerName"
+            name="customerName"
+            required
+            #customerNameInput = "ngModel"
+            [ngClass]="{'error': customerNameInput.invalid && customerNameInput.touched}"
+            placeholder="Enter customer name..."
+            ><br>
+
+            <label for="customerRetrievalRate">Customer Retrieval Rate:</label><br>
+            <input 
+            type="number" 
+            id="customerRetrievalRate"
+            [(ngModel)]="customerRetrievalRate"
+            name="customerRetrievalRate"
+            required
+            min="1"
+            #customerRetrievalRateInput="ngModel"
+            [ngClass]="{'error': customerRetrievalRateInput.invalid && customerRetrievalRateInput.touched}"
+            ><br>
+
+            
+
+            <label for="purchaseQuantity">Purchase quantity:</label><br>
+            <input 
+            type="number" 
+            id="purchaseQuantity" 
+            [(ngModel)]="purchaseQuantity"
+            name="purchaseQuantity"
+            required
+            min="1"
+            #purchaseQuantityInput ="ngModel"
+            [ngClass]="{'error': purchaseQuantityInput.invalid && purchaseQuantityInput.touched}"
+            ><br>
+
+            <div class="formButtons">
+                <button type="reset" class="resetButton">Reset</button>
+                <button type="submit" class="submitButton" [disabled]="customerForm.invalid">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

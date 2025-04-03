@@ -1,0 +1,30 @@
+.logDiv{
+    background-color: white;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 50px;
+    margin-bottom: 75px;
+    padding-bottom: 10px;
+    border-radius: 20px 20px 10px 10px;
+    /* overflow-y: auto; */
+}
+
+h3{
+    margin: 0;
+    background-color: #130f40;
+    border-radius: 20px 20px 0 0;
+    padding-left: 25px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    color: white;
+}
+
+pre{
+    margin-bottom: 10px;
+    margin-top: 0;
+    overflow-y: auto;
+    min-height: 200px;
+    max-height: 300px;
+    padding-left: 25px;
+    padding-top: 10px;
+}

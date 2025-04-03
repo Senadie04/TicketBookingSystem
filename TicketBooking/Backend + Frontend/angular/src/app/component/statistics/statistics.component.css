@@ -1,0 +1,38 @@
+#ticketStats{
+    margin-top: 40px;
+    margin-left: 25px;
+    margin-right: 25px;
+    background-color: white;
+    border-radius: 20px 20px 10px 10px;
+    padding-bottom: 15px;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+h3{
+    text-align: center;
+    border-radius: 20px 20px 0 0;
+    margin-bottom: 10px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    background-color: #130f40;
+    color: white;
+}
+
+span{
+    /* background-color: #130f40; */
+    border-radius: 20px;
+    width: 75%;
+    padding: 10px;
+    font-size: 18px;
+    /* color: white; */
+}
+
+.container span{
+    text-align: center;
+}
